@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="flex flex-col w-screen min-h-screen overflow-x-hidden bg-black-bg">
+      <body className="flex flex-col w-screen min-h-screen overflow-x-hidden bg-black-bg scroll-smooth">
         <WindowSizeInitializer />
         <Header />
         {children}

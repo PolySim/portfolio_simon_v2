@@ -63,3 +63,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.text-stroke-primary {
+  -webkit-text-stroke: 1px hsla(350, 91%, 65%, 1);
+}

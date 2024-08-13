@@ -11,7 +11,7 @@ const HeaderDesktop = () => {
   return (
     <header
       onMouseLeave={() => setSectionHover(null)}
-      className="fixed left-1/2 top-8 -translate-x-1/2 flex gap-8"
+      className="fixed left-1/2 top-8 -translate-x-1/2 flex gap-8 z-10"
     >
       <HoverHeaderItem />
       {SECTIONS.map((item, index) => (

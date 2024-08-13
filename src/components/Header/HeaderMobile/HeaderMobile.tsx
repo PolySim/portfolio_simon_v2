@@ -13,7 +13,7 @@ const HeaderMobile = () => {
     <>
       <div
         className={cn(
-          "flex flex-col gap-2 justify-center items-center fixed w-screen h-screen bg-black-bg transition",
+          "flex flex-col gap-2 justify-center items-center fixed w-screen h-screen bg-black-bg transition z-50",
           {
             "translate-x-0": menuIsOpen,
             "-translate-x-full": !menuIsOpen,

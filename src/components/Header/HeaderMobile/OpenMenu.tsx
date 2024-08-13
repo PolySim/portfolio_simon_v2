@@ -23,7 +23,7 @@ const OpenMenu = () => {
         console.log("clicked");
       }}
       className={cn(
-        "fixed left-8 top-8 z-30 text-white w-[50px] mt-2.5 p-0 h-fit",
+        "fixed left-8 top-8 z-50 text-white w-[50px] mt-2.5 p-0 h-fit",
         {
           "menu-open": menuIsOpen,
           "menu-close": !menuIsOpen,
