@@ -23,6 +23,12 @@ const config = {
         bebas: '"Bebas Neue", sans-serif',
         m2: '"M PLUS 2", Helvetica, sans-serif',
       },
+      colors: {
+        "black-bg": "#0f0f0f",
+        primary: {
+          100: "hsla(350, 91%, 65%, 1)",
+        },
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

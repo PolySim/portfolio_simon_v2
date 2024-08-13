@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import WindowSizeInitializer from "@/initializer/WindowSizeInitializer";
+import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
   title: {
@@ -18,8 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body>
+      <body className="flex flex-col w-screen min-h-screen overflow-x-hidden bg-black-bg">
         <WindowSizeInitializer />
+        <Header />
         {children}
       </body>
     </html>
