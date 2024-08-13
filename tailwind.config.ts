@@ -29,6 +29,9 @@ const config = {
           100: "hsla(350, 91%, 65%, 1)",
         },
       },
+      letterSpacing: {
+        12: "12px",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

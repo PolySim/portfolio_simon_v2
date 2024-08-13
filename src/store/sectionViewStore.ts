@@ -6,4 +6,6 @@ export const useSectionViewStore = create<UseSectionViewStore>()((set) => ({
   setSectionViewing: (section) => set({ sectionViewing: { index: section } }),
   sectionHover: null,
   setSectionHover: (section) => set({ sectionHover: section }),
+  menuIsOpen: false,
+  toggleMenuIsOpen: () => set((state) => ({ menuIsOpen: !state.menuIsOpen })),
 }));

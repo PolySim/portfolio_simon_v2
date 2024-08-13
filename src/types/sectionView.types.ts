@@ -3,6 +3,8 @@ export type UseSectionViewStore = {
   setSectionViewing: (section: number) => void;
   sectionHover: SectionHover | null;
   setSectionHover: (section: SectionHover | null) => void;
+  menuIsOpen: boolean;
+  toggleMenuIsOpen: () => void;
 };
 
 type SectionHover = {
