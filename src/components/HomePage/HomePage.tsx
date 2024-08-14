@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <ScrollInto index={0}>
       <div className="flex flex-col gap-8 justify-center items-center relative min-h-screen w-screen text-center font-bebas tracking-12">
-        <p className="text-4xl md:text-5xl px-12 text-transparent text-stroke-primary z-10">
+        <p className="text-4xl md:text-5xl px-12 text-stroke-primary z-10">
           Welcome on my portfolio, I am
         </p>
         <p className="text-linear text-8xl md:text-9xl uppercase z-10">Simon</p>
