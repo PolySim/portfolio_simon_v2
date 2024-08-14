@@ -20,7 +20,7 @@ const HeaderMobileItem = ({
   );
 
   const onCLick = () => {
-    setSectionViewing(index);
+    setSectionViewing(index, true);
     toggleMenuIsOpen();
   };
 

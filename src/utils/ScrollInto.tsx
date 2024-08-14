@@ -30,14 +30,21 @@ const ScrollInto = ({
     if (sectionViewing.index === null && isVisible) {
       setSectionViewing(index);
     }
-  }, [sectionViewing]);
+  }, [sectionViewing.index]);
 
   useEffect(() => {
-    if (isVisible && sectionViewing.index !== index) {
+    if (
+      isVisible &&
+      sectionViewing.index !== index &&
+      !sectionViewing.isScrolling
+    ) {
       setSectionViewing(index);
     }
     if (!isVisible && sectionViewing.index === index) {
       setSectionViewing(null);
+    }
+    if (isVisible && sectionViewing.index === index) {
+      setSectionViewing(index, false);
     }
   }, [isVisible]);
 

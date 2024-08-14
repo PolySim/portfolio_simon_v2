@@ -1,6 +1,6 @@
 export type UseSectionViewStore = {
-  sectionViewing: { index: number | null };
-  setSectionViewing: (section: number | null) => void;
+  sectionViewing: { index: number | null; isScrolling?: boolean };
+  setSectionViewing: (section: number | null, isScrolling?: boolean) => void;
   sectionHover: SectionHover | null;
   setSectionHover: (section: SectionHover | null) => void;
   menuIsOpen: boolean;

@@ -32,7 +32,7 @@ const HeaderDesktopItem = ({
     <Button
       variant="ghost"
       onMouseEnter={(e) => onHover(e)}
-      onClick={() => setSectionViewing(index)}
+      onClick={() => setSectionViewing(index, true)}
     >
       <h4
         className={cn("text-white text-lg font-rubik", {
