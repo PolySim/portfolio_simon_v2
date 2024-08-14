@@ -1,4 +1,5 @@
 import { Skills } from "@/types/skills.types";
+import { Project } from "@/types/projects.types";
 
 export const SECTIONS = ["Home", "About me", "Skills", "Projects", "Contact"];
 
@@ -83,3 +84,29 @@ export const SKILLS: Skills = {
     },
   ],
 };
+
+export const PROJECTS: Project[] = [
+  {
+    name: "Professional photographer",
+    demoPath: "https://angelinedesdevises.fr/",
+    sourceCodePath: "https://github.com/PolySim/portfolio_ad_next",
+    imgPath: "/project/angeline.png",
+  },
+  {
+    name: "Clone Apple MacBook",
+    demoPath: "https://polysim.github.io/Apple_MacbookAir/",
+    sourceCodePath: "https://github.com/PolySim/Apple_MacbookAir",
+    imgPath: "/project/macBookAir.png",
+  },
+  {
+    name: "This portfolio",
+    demoPath: "",
+    sourceCodePath: "https://github.com/PolySim/portfolio_simon_v2",
+    imgPath: "/project/simon.png",
+  },
+  {
+    name: "65 Pasion Montagne",
+    sourceCodePath: "https://github.com/PolySim/65_passion_mountain_web",
+    imgPath: "/project/65PassionMontagne.png",
+  },
+];

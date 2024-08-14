@@ -1,7 +1,7 @@
 import { UseVisible } from "@/types/useVisible.types";
 import { useEffect, useState } from "react";
 
-export const useVisible: UseVisible = (refElement, top) => {
+export const useVisible: UseVisible = (refElement, top, keepVisible) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
@@ -10,7 +10,9 @@ export const useVisible: UseVisible = (refElement, top) => {
 
       const ob = new IntersectionObserver(
         ([entry]) => {
-          setVisible(entry.isIntersecting);
+          setVisible((curr) =>
+            keepVisible ? curr || entry.isIntersecting : entry.isIntersecting,
+          );
         },
         {
           rootMargin: top,
