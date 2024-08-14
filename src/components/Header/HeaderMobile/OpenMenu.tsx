@@ -2,7 +2,6 @@
 
 import { useSectionViewStore } from "@/store/sectionViewStore";
 import { cn } from "@/lib/utils";
-import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
 const OpenMenu = () => {
@@ -10,10 +9,6 @@ const OpenMenu = () => {
   const toggleMenuIsOpen = useSectionViewStore(
     (state) => state.toggleMenuIsOpen,
   );
-
-  useEffect(() => {
-    console.log(menuIsOpen);
-  }, [menuIsOpen]);
 
   return (
     <Button
