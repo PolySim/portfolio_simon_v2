@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <body className="flex flex-col w-screen min-h-screen overflow-x-hidden bg-black-bg scroll-smooth">
         <WindowSizeInitializer />
         <Header />
