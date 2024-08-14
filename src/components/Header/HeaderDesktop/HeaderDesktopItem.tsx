@@ -36,7 +36,7 @@ const HeaderDesktopItem = ({
     >
       <h4
         className={cn("text-white text-lg font-rubik", {
-          "text-primary-100": sectionViewing.index === index,
+          "text-linear": sectionViewing.index === index,
         })}
       >
         {title}
