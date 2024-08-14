@@ -19,7 +19,19 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const words = text.split("");
+  const words = text.split(" ");
+  const letters = text.split("");
+
+  const numberLettersBefore = ({ i, j }: { i: number; j: number }) => {
+    return (
+      j +
+      words.reduce(
+        (acc, curr, currentIndex) =>
+          currentIndex < i ? acc + curr.length : acc,
+        0,
+      )
+    );
+  };
 
   return (
     <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
@@ -31,16 +43,26 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
         <p
           ref={targetRef}
           className={
-            "flex flex-wrap p-5 text-2xl font-bold text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl"
+            "flex flex-wrap gap-2 lg:gap-3 p-5 text-2xl font-bold text-white/20 dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl"
           }
         >
           {words.map((word, i) => {
-            const start = i / words.length;
-            const end = start + 1 / words.length;
             return (
-              <Word key={i} progress={scrollYProgress} range={[start, end]}>
-                {word}
-              </Word>
+              <span key={i}>
+                {word.split("").map((letter, j) => {
+                  const start = numberLettersBefore({ i, j }) / letters.length;
+                  const end = start + 1 / letters.length;
+                  return (
+                    <Word
+                      key={j}
+                      progress={scrollYProgress}
+                      range={[start, end]}
+                    >
+                      {letter}
+                    </Word>
+                  );
+                })}
+              </span>
             );
           })}
         </p>
@@ -58,11 +80,11 @@ interface WordProps {
 const Word: FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
-    <span className="xl:lg-3 relative mx-1 lg:mx-2.5">
+    <span className="xl:lg-3 relative mx-1 lg:mx-1.5">
       <span className={"absolute opacity-30"}>{children}</span>
       <motion.span
         style={{ opacity: opacity }}
-        className={"text-black dark:text-white"}
+        className={"text-white dark:text-white"}
       >
         {children}
       </motion.span>
