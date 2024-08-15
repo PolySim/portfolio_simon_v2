@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import WindowSizeInitializer from "@/initializer/WindowSizeInitializer";
+import Header from "@/components/Header/Header";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: {
@@ -17,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body>
+    <html lang="en">
+      <body className="flex flex-col w-screen min-h-screen overflow-x-hidden bg-black-bg scroll-smooth">
         <WindowSizeInitializer />
+        <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );
