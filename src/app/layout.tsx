@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import WindowSizeInitializer from "@/initializer/WindowSizeInitializer";
 import Header from "@/components/Header/Header";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +24,7 @@ export default function RootLayout({
         <WindowSizeInitializer />
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );

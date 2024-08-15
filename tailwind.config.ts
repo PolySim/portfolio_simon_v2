@@ -25,6 +25,7 @@ const config = {
       },
       colors: {
         "black-bg": "#0f0f0f",
+        "black-input": "#1e1e1e",
         primary: {
           100: "hsla(350, 91%, 65%, 1)",
         },
@@ -32,6 +33,10 @@ const config = {
       letterSpacing: {
         8: "8px",
         12: "12px",
+      },
+      backgroundImage: {
+        linear:
+          "linear-gradient(90deg, hsla(329, 91%, 65%, 1) 0%, hsla(350, 91%, 65%, 1) 100%)",
       },
       keyframes: {
         apparition: {
