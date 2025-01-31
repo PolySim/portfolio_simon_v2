@@ -16,7 +16,7 @@ const Card = ({ project, index }: { project: Project; index: number }) => {
           alt={project.name}
           width={200}
           height={200}
-          className="w-full h-52 object-cover rounded"
+          className="w-full h-52 object-cover rounded-sm"
         />
         <div className="grid grid-cols-2 gap-4 pt-4">
           {project.sourceCodePath && (

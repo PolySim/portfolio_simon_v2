@@ -1,10 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@300;400;500;600;700;800;900&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-rubik: 'Rubik', sans-serif;
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-m2: 'M PLUS 2', Helvetica, sans-serif;
+
+  --color-black-bg: #0f0f0f;
+  --color-black-input: #1e1e1e;
+
+  --color-primary-100: hsla(350, 91%, 65%, 1);
+
+  --tracking-8: 8px;
+  --tracking-12: 12px;
+
+  --background-image-linear: linear-gradient(
+    90deg,
+    hsla(329, 91%, 65%, 1) 0%,
+    hsla(350, 91%, 65%, 1) 100%
+  );
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-meteor: meteor 5s linear infinite;
+  --animate-apparition: apparition 0.5s linear forwards;
+
+  @keyframes apparition {
+    0% {
+      opacity: 0;
+      transform: translateY(4rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(100vw) translateY(100vh);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-100vw);
+      opacity: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 .menu-open {
   > span {
