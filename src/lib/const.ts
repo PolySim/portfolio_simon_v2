@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Professional photographer",
     demoPath: "https://angelinedesdevises.fr/",
-    sourceCodePath: "https://github.com/PolySim/portfolio_ad_next",
+    sourceCodePath: "https://github.com/PolySim/Angeline.Monorepo",
     imgPath: "/project/angeline.png",
   },
   {
@@ -99,14 +99,15 @@ export const PROJECTS: Project[] = [
     imgPath: "/project/macBookAir.png",
   },
   {
-    name: "This portfolio",
-    demoPath: "",
-    sourceCodePath: "https://github.com/PolySim/portfolio_simon_v2",
-    imgPath: "/project/simon.png",
+    name: "Create your documentation",
+    demoPath: "https://docs.simondesdevises.com/",
+    sourceCodePath: "https://github.com/PolySim/Create-Documentation",
+    imgPath: "/project/documentation.png",
   },
   {
     name: "65 Pasion Montagne",
-    sourceCodePath: "https://github.com/PolySim/65_passion_mountain_web",
+    demoPath: "https://65passionmontagne.simondesdevises.com/",
+    sourceCodePath: "https://github.com/PolySim/65.Monorepo",
     imgPath: "/project/65PassionMontagne.png",
   },
 ];
