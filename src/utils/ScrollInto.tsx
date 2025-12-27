@@ -1,6 +1,6 @@
 "use client";
 
-import { PropsWithChildren, useCallback, useEffect, useRef } from "react";
+import { PropsWithChildren, useEffect, useRef } from "react";
 import { useSectionViewStore } from "@/store/sectionViewStore";
 import { useVisible } from "@/utils/hook/useVisible";
 import { useWindowSizeStore } from "@/store/windowSizeStore";
@@ -17,20 +17,10 @@ const ScrollInto = ({
   const windowHeight = useWindowSizeStore((state) => state.height);
   const { isVisible } = useVisible(ref, `-${windowHeight / 3}px`);
 
-  const scrollTo = useCallback(() => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [ref]);
-
   useEffect(() => {
-    if (sectionViewing.index === index) {
-      scrollTo();
-    }
-    if (sectionViewing.index === null && isVisible) {
-      setSectionViewing(index);
-    }
-  }, [sectionViewing.index]);
+    const addSection = useSectionViewStore.getState().addSection;
+    addSection(ref, index);
+  });
 
   useEffect(() => {
     if (
@@ -38,13 +28,13 @@ const ScrollInto = ({
       sectionViewing.index !== index &&
       !sectionViewing.isScrolling
     ) {
-      setSectionViewing(index);
+      setSectionViewing(index, false, false);
     }
     if (!isVisible && sectionViewing.index === index) {
-      setSectionViewing(null);
+      setSectionViewing(null, false, false);
     }
     if (isVisible && sectionViewing.index === index) {
-      setSectionViewing(index, false);
+      setSectionViewing(index, false, false);
     }
   }, [isVisible]);
 

@@ -9,7 +9,7 @@ const Skill = ({ skill }: { skill: SkillType }) => {
       <div
         data-content={skill.title}
         className={cn(
-          "flex justify-center items-center rounded-full relative size-[120px] cursor-pointer group-hover:scale-90 transition duration-200 skill-box-after group-hover:md:after:-translate-x-1/2 group-hover:md:after:translate-y-1/2 group-hover:md:after:opacity-100 after:content-[attr(data-content)]",
+          "flex justify-center items-center rounded-full relative size-[120px] cursor-pointer group-hover:scale-90 transition duration-200 skill-box-after md:group-hover:after:-translate-y-[15%] md:group-hover:after:!opacity-100 after:content-[attr(data-content)]",
         )}
         style={{
           background: skill.background_linear,

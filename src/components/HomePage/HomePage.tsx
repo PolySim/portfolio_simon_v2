@@ -1,4 +1,3 @@
-import Meteors from "@/components/magicui/meteors";
 import WindowSizeContainer from "@/utils/WindowSizeContainer";
 import ScrollDown from "@/components/HomePage/ScrollDown";
 import ScrollInto from "@/utils/ScrollInto";
@@ -14,7 +13,7 @@ const HomePage = () => {
         </p>
         <p className="text-linear text-8xl md:text-9xl uppercase z-10">Simon</p>
         <WindowSizeContainer minWidth={METEORS_MAX_WIDTH}>
-          <Meteors number={30} />
+          {/*<Meteors number={30} />*/}
         </WindowSizeContainer>
         <ScrollDown />
       </div>
